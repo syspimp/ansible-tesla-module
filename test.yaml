@@ -1,0 +1,14 @@
+- hosts: localhost
+  gather_facts: no
+  environment:
+    TESLA_EMAIL: "myteslameail@mydomain.com"
+    TESLA_PASSWORD: "supersecretTeslaPass"
+  tasks:
+  - name: testing out the tesla api
+    tesla:
+      tesla_function: is_sentry_mode_enabled
+      #tesla_debug: true
+
+  - name: Pop the trunk to indicate success
+    tesla:
+      tesla_function: actuate_trunk
